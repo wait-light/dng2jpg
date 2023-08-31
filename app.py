@@ -3,24 +3,17 @@ from PIL import Image
 import os
 import glob
 
-pasta = "."  # Substitua pelo caminho da pasta que você deseja verificar
+folder = "./raw"
+dng_files = glob.glob(os.path.join(folder, "*.dng"))
 
-# Use a função glob para pegar todos os arquivos .dng na pasta
-arquivos_dng = glob.glob(os.path.join(pasta, "*.dng"))
+for dng_file in dng_files:
+	file_name = os.path.basename(dng_file)
 
-# Imprima o nome de cada arquivo .dng
-for arquivo_dng in arquivos_dng:
-	nome_arquivo = os.path.basename(arquivo_dng)
-
-	# Carregando a imagem DNG
-	raw = rawpy.imread(nome_arquivo)
-
-	# Convertendo a imagem RAW para uma imagem RGB
+	raw = rawpy.imread(file_name)
 	rgb = raw.postprocess()
 
-	# Convertendo a imagem RGB para o formato JPEG
 	jpeg_image = Image.fromarray(rgb)
-	jpeg_path = f"output/{nome_arquivo}.jpg"
+	jpeg_path = f"output/{file_name}.jpg"
 	jpeg_image.save(jpeg_path)
 
-	print(f"Imagem {nome_arquivo} convertida para JPEG e salva com sucesso.")
+	print(f"Image {file_name} converted to JPEG e and sabed successfully.")

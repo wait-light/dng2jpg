@@ -1,4 +1,10 @@
-# DNG to JPG
+# DNG to JPG Image Converter
+
+This repository provides a versatile Python script for effortlessly converting DNG (Digital Negative) images to the widely supported JPEG format.
+
+DNG files, often used by photographers and in professional photography, can now be seamlessly transformed into JPEG images, enhancing their compatibility for sharing, displaying, and printing across a wide range of devices and platforms.
+
+Whether you're a photographer looking to share your work online, a developer working on image processing tools, or simply someone looking to convert DNG files, this repository provides a straightforward solution for transforming DNG images into the more widely supported JPEG format.
 
 # Requirements
 
@@ -30,6 +36,10 @@ On windows:
 python -m venv envname
 envname\Scripts\activate
 ```
+
+# Usage
+
+The code has been designed to be short, simple, and easy to understand. For proper functionality, just place your DNG image files in a folder named raw within the same directory level as the `app.py` file, and then run the `app.py` file.
 
 # Contributing
 
