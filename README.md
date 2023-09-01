@@ -27,14 +27,25 @@ cd dng2jpg
 Set up a virtual environment (optional but recommended):
 
 ```shell
-python -m venv envname
-source envname/bin/activate
+python -m venv .env
+source .env/bin/activate
 ```
 
 On windows:
 ```shell
-python -m venv envname
-envname\Scripts\activate
+python -m venv .env
+.env\Scripts\activate
+```
+
+Install the required dependencies:
+```shell
+pip install -r requirements.txt
+```
+
+To conclude the use of the environment, employ the following code:
+
+```shell
+deactivate
 ```
 
 # Usage
