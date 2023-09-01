@@ -12,7 +12,7 @@ def check_folder_existence(folder_name):
 def dng_name_clear(file_name):
 	return re.sub(r"\.dng$", "", file_name)
 
-def dng_renamer(dng_files):
+def dng_renamer(dng_files, output_folder):
 	for dng_file in dng_files:
 		file_name = os.path.basename(dng_file)
 		cleaned_file_name = dng_name_clear(file_name)
@@ -21,7 +21,7 @@ def dng_renamer(dng_files):
 		rgb = raw.postprocess()
 
 		img = imageio.core.util.Array(rgb)
-		jpeg_path = f"output/{cleaned_file_name}.jpg"
+		jpeg_path = f"{output_folder}/{cleaned_file_name}.jpg"
 		imageio.imwrite(jpeg_path, img)
 
 		print(f"Image {file_name} converted to JPEG and saved successfully.")
@@ -31,5 +31,5 @@ output_folder = "output"
 dng_files = glob.glob(os.path.join(raw_folder, "*.dng"))
 
 check_folder_existence(output_folder)
-dng_renamer(dng_files)
+dng_renamer(dng_files, output_folder)
 
