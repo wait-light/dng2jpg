@@ -12,7 +12,7 @@ def check_folder_existence(folder_name):
 def dng_name_clear(file_name):
 	return re.sub(r"\.dng$", "", file_name)
 
-def dng_renamer(dng_files, output_folder):
+def rename_dng(dng_files, output_folder):
 	for dng_file in dng_files:
 		file_name = os.path.basename(dng_file)
 		cleaned_file_name = dng_name_clear(file_name)
@@ -31,5 +31,4 @@ output_folder = "output"
 dng_files = glob.glob(os.path.join(raw_folder, "*.dng"))
 
 check_folder_existence(output_folder)
-dng_renamer(dng_files, output_folder)
-
+rename_dng(dng_files, output_folder)
