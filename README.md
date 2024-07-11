@@ -8,7 +8,7 @@ Whether you're a photographer looking to share your work online, a developer wor
 
 # Requirements
 
-- Python 3.x installed
+- Python 3.11 installed
 
 # Installation
 
@@ -51,6 +51,10 @@ deactivate
 # Usage
 
 The code has been designed to be short, simple, and easy to understand. For proper functionality, just place your DNG image files in a folder named raw within the same directory level as the `app.py` file, and then run the `app.py` file.
+
+```shell
+python app.py
+```
 
 # Contributing
 
